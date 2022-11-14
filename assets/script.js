@@ -1,7 +1,7 @@
 var timeEl = document.querySelector(".timer");
-
+var startButton = document.querySelector(".start");
 var secondsLeft = 100;
-
+var quizContainer = document.querySelector(".quiz");
 let myQuestions = [
   {
     question: "Question 1",
@@ -55,8 +55,42 @@ let myQuestions = [
   },
 ];
 
-document.querySelector("#start").addEventListener("click", startTimer);
+startButton.addEventListener("click", startTimer);
+startButton.addEventListener("click", function () {showQuestions(myQuestions, quizContainer);});
 
+function showQuestions(myQuestions, quizContainer) {
+  var output = [];
+  var answers;
+
+  for (var i = 0; i < myQuestions.length; i++) {
+    answers = [];
+
+    for (letter in myQuestions[i].answers) {
+      answers.push(
+        "<label>" +
+          '<input type="radio" name="question' +
+          i +
+          '" value="' +
+          letter +
+          '">' +
+          letter +
+          ": " +
+          myQuestions[i].answers[letter] +
+          "</label>"
+      );
+    }
+  
+  output.push(
+    '<div class="question">' +
+      myQuestions[i].question +
+      "</div>" +
+      '<div class="answers">' +
+      answers.join("") +
+      "</div>"
+  );
+  }
+  quizContainer.innerHTML = output.join("");
+}
 function startTimer() {
   var timerInterval = setInterval(function () {
     secondsLeft--;
