@@ -34,3 +34,7 @@ var questions = [
     correctAnswer: "guess",
   },
 ];
+
+var startButton = document.getElementById("startButton");
+var questionArea = document.getElementById("questionArea");
+var questionText = document.getElementById("question-text");
