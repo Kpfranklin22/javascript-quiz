@@ -8,18 +8,21 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <!-- Starting point page for quiz -->
+    <!-- Starting point for quiz -->
     <div id="welcomePage">
       <h1 id="welcomeBanner">TEST YOUR MIGHT</h1>
       <p id="instructions">
         Keep in mind scholar, this quiz is timed! Incorrect answers are
-        punishable by 10 seconds of time theft! Press START for your trial
-        to begin!
+        punishable by 10 seconds of time theft! Press START for your trial to
+        begin! Only the highest score will be revealed!
       </p>
-
       <button id="startButton">START</button>
     </div>
-
+    <!-- link to highest score -->
+    <a id="see-high-score" href="highscore.html">See Highest Score!</a>
+    <!-- the timer for the quiz -->
+    <h2 id="timer">60 seconds remain</h2>
+    <!-- text for each question -->
     <div id="questionArea">
       <h3 id="question-text"></h3>
       <ul id="answer-options">
@@ -27,6 +30,19 @@
         <li id="li2"></li>
         <li id="li3"></li>
       </ul>
+    </div>
+    <!-- End point for the quiz -->
+    <div id="endPage">
+      <h4 id="message">GAME OVER</h4>
+      <h4 id="gameOver"></h4>
+
+      <form id="initialsBox">
+        <form>
+          <label for="initials">Make your mark!</label><br />
+          <input type="text" id="initialsInput" name="initials" />
+        </form>
+        <button id="enter">Enter!</button>
+      </form>
     </div>
 
     <script src="./assets/javascript/script.js"></script>

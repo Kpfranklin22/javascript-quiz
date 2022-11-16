@@ -37,3 +37,8 @@ var optionList = document.getElementById("answer-options");
 var optionOne = document.getElementById("li1");
 var optionTwo = document.getElementById("li2");
 var optionThree = document.getElementById("li3");
+
+var endPage = document.getElementById("endPage");
+var gameOverMessage = document.getElementById("gameOver");
+var userInitials = document.getElementById("initialsInput");
+var submitInitialsButton = document.getElementById("enter");
