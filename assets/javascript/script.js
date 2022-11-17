@@ -74,7 +74,7 @@ function quizQuestions() {
   var startingPoint = document.getElementById("startingPoint");
   startingPoint.style.display = "none";
   questionArea.style.display = "block";
-  
+
   // Loads question text:
   var currentQuestion = questions[0];
   questionText.textContent = currentQuestion.questionText;
@@ -113,18 +113,34 @@ function quizQuestions() {
 function calculateScore() {
   finalScore = numberCorrect * 25 + timeLeft;
 }
-
+var currentHighScoreArr = [];
 //Checks to see if there is a high score in local storage and if this user's score is higher. If so, it saves this user's score and initials.
 function checkHighScore() {
-  if (
-    localStorage.getItem("currentHighScore") < finalScore ||
-    localStorage.getItem("currentHighScore" == null)
-  ) {
-    currentHighScore = finalScore;
-    localStorage.setItem("currentHighScore", currentHighScore);
+  // if (
+  //   localStorage.getItem("currentHighScore") < finalScore ||
+  //   localStorage.getItem("currentHighScore" == null)
+  // ) {
+  // currentHighScore = finalScore;
+  // localStorage.setItem("userInitials", currentUserInitials);
+  // }
+}
 
-    var currentUserInitials = userInitials.value;
-    localStorage.setItem("userInitials", currentUserInitials);
+function submitHighScore() {
+  var currentUserInitials = userInitials.value;
+  if (currentUserInitials !== "") {
+    currentHighScoreArr =
+      JSON.parse(localStorage.getItem("currentHighScore")) || [];
+    var userDetails = {
+      userInitials: currentUserInitials,
+      score: finalScore,
+    };
+    console.log(userDetails);
+    currentHighScoreArr.push(userDetails);
+    console.log(currentHighScoreArr);
+    localStorage.setItem(
+      "currentHighScore",
+      JSON.stringify(currentHighScoreArr)
+    );
   }
 }
 
@@ -139,7 +155,8 @@ function endGame() {
   //Listens for a click on the button to save user game data
   submitInitialsButton.addEventListener("click", function (e) {
     e.preventDefault();
-    checkHighScore();
+    submitHighScore();
+    // checkHighScore();
     window.open("./highscore.html", "_self");
   });
 }

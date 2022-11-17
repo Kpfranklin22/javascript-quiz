@@ -1,10 +1,10 @@
 body {
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: antiquewhite;
 }
 
 #startingPoint {
-    background-color: blanchedalmond;
     margin: 10px 50px;
 }
 
