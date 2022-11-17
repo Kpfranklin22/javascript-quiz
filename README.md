@@ -6,6 +6,7 @@ This exercise is about using our skills with HTML, CSS, and Javascript to create
 
 ![javascriptquizscreen](https://user-images.githubusercontent.com/115495027/202522650-f676a8f3-7b83-405e-a942-013b3c27cbd3.png)
 
+Deployed website: https://kpfranklin22.github.io/javascript-quiz/index.html
 
 ## Usage
 
