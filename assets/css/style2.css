@@ -9,6 +9,7 @@ h2 {
 }
 
 #play-again {
+    justify-content:center;
     font-size: large;
     border: 2px solid burlywood;
     text-decoration: none;
@@ -21,4 +22,6 @@ h2 {
 .scoreItems {
     list-style-type: none;
     text-align: center;
+    text-decoration-style: solid;
+    font-size: xxx-large;
 }

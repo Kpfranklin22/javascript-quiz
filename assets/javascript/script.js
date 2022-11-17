@@ -116,13 +116,13 @@ function calculateScore() {
 var currentHighScoreArr = [];
 //Checks to see if there is a high score in local storage and if this user's score is higher. If so, it saves this user's score and initials.
 function checkHighScore() {
-  // if (
-  //   localStorage.getItem("currentHighScore") < finalScore ||
-  //   localStorage.getItem("currentHighScore" == null)
-  // ) {
-  // currentHighScore = finalScore;
-  // localStorage.setItem("userInitials", currentUserInitials);
-  // }
+  if (
+    localStorage.getItem("currentHighScore") < finalScore ||
+    localStorage.getItem("currentHighScore" == null)
+  ) {
+    currentHighScore = finalScore;
+    localStorage.setItem("userInitials", currentUserInitials);
+  }
 }
 
 function submitHighScore() {
@@ -156,7 +156,7 @@ function endGame() {
   submitInitialsButton.addEventListener("click", function (e) {
     e.preventDefault();
     submitHighScore();
-    // checkHighScore();
+    checkHighScore();
     window.open("./highscore.html", "_self");
   });
 }
